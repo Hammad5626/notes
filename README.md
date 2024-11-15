@@ -77,6 +77,8 @@ clip < ~/.ssh/id_ed25519.pub
 pbcopy < ~/.ssh/id_ed25519.pub
 ```
 
+---
+
 ## EC2 Deployment
 
 ### Required packages
@@ -196,6 +198,8 @@ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 sudo certbot --nginx
 ```
 
+---
+
 ## Postgres Setup
 
 ### ArchLinux
@@ -230,6 +234,8 @@ CREATE DATABASE sampledb;
 GRANT ALL PRIVILEGES ON DATABASE sampledb TO sampleuser;
 \q
 ```
+
+---
 
 ## ZSH + OMZ + P10K
 
@@ -311,11 +317,19 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 ### Install ColorLS and EXA
 
+For ArchLinux
+
 ```bash
 sudo pacman -S ruby
+sudo pacman -S exa
+sudo gem install colorls
+```
+
+For Ubuntu or Debian Based Linux
+
+```bash
 sudo apt install ruby-full
 sudo gem install colorls
-sudo pacman -S exa
 sudo apt install -y cargo
 cargo install exa
 ```
@@ -363,4 +377,91 @@ alias sshfam='sudo ssh -i ~/Documents/pem/FamilyArchive.pem ubuntu@13.48.43.200'
 alias sshsteno='sudo ssh -i ~/Documents/pem/steno_prep.pem ubuntu@54.151.46.192'
 alias sshprop='sudo ssh -i ~/Documents/pem/propgul.pem ubuntu@18.117.244.62'
 alias sshmqtt='sudo ssh -i ~/Documents/pem/mqtt.pem ubuntu@13.48.185.60'
+```
+
+### Package Manager Aliasing
+
+```bash
+function apt() {
+    if [[ $1 == "install" ]]; then
+        shift
+        sudo pacman -S "$@"
+    elif [[ $1 == "remove" ]]; then
+        shift
+        sudo pacman -R "$@"
+    elif [[ $1 == "update" ]]; then
+        shift
+        sudo pacman -Sy "$@"
+    elif [[ $1 == "upgrade" ]]; then
+        shift
+        sudo pacman -Syu "$@"
+    else
+        echo "Command not supported: dnf $@"
+    fi
+}
+```
+
+```bash
+function dnf() {
+    if [[ $1 == "install" ]]; then
+        shift
+        sudo pacman -S "$@"
+    elif [[ $1 == "remove" ]]; then
+        shift
+        sudo pacman -R "$@"
+    elif [[ $1 == "update" ]]; then
+        shift
+        sudo pacman -Sy "$@"
+    elif [[ $1 == "upgrade" ]]; then
+        shift
+        sudo pacman -Syu "$@"
+    else
+        echo "Command not supported: dnf $@"
+    fi
+}
+```
+
+```bash
+function app() {
+    if [[ $1 == "i" ]]; then
+        shift
+        sudo pamac install "$@"
+    elif [[ $1 == "r" ]]; then
+        shift
+        sudo pamac remove "$@"
+    elif [[ $1 == "up" ]]; then
+        shift
+        sudo pamac update "$@"
+    elif [[ $1 == "u" ]]; then
+        shift
+        sudo pamac upgrade "$@"
+    else
+        echo "Command not supported: dnf $@"
+    fi
+}
+```
+
+```bash
+function sudo() {
+    if [[ $1 == "apt" ]]; then
+        shift
+        apt "$@"
+    elif [[ $1 == "dnf" ]]; then
+        shift
+        dnf "$@"
+    else
+        command sudo "$@"
+    fi
+}
+```
+
+```bash
+function sudo() {
+    if [[ $1 == "dnf" ]]; then
+        shift
+        dnf "$@"
+    else
+        command sudo "$@"
+    fi
+}
 ```
