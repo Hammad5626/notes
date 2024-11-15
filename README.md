@@ -79,7 +79,7 @@ pbcopy < ~/.ssh/id_ed25519.pub
 
 ---
 
-## 🚀 EC2 Deployment {#ec2-deployment}
+## 🚀 EC2 Deployment <a id="ec2-deployment"></a>
 
 ### Required packages
 
@@ -200,7 +200,7 @@ sudo certbot --nginx
 
 ---
 
-## 🐘 Postgres Setup {#postgres-setup}
+## 🐘 Postgres Setup <a id="postgres-setup"></a>
 
 ### ArchLinux
 
@@ -237,7 +237,7 @@ GRANT ALL PRIVILEGES ON DATABASE sampledb TO sampleuser;
 
 ---
 
-## 🎨 ZSH + OMZ + P10K {#zsh-setup}
+## 🎨 ZSH + OMZ + P10K <a id="zsh-setup"></a>
 
 ### install zsh
 
