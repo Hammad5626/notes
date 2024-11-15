@@ -9,7 +9,7 @@
 
 ---
 
-## 🔧 GIT AND SSH
+## 🔧 GIT AND SSH {#git-and-ssh}
 
 ### Git Config
 
@@ -79,7 +79,7 @@ pbcopy < ~/.ssh/id_ed25519.pub
 
 ---
 
-## 🚀 EC2 Deployment
+## 🚀 EC2 Deployment {#ec2-deployment}
 
 ### Required packages
 
@@ -200,7 +200,7 @@ sudo certbot --nginx
 
 ---
 
-## 🐘 Postgres Setup
+## 🐘 Postgres Setup {#postgres-setup}
 
 ### ArchLinux
 
@@ -237,7 +237,7 @@ GRANT ALL PRIVILEGES ON DATABASE sampledb TO sampleuser;
 
 ---
 
-## 🎨 ZSH Setup
+## 🎨 ZSH + OMZ + P10K {#zsh-setup}
 
 ### install zsh
 
