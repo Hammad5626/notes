@@ -1,15 +1,15 @@
-# Hamad Badar's Guide
+# 🧑‍💻 Hamad Badar's Guide
 
 ## Table of Contents
 
-1. [Git and SSH](#git-and-ssh)
-2. [EC2 Deployment](#ec2-deployment)
-3. [Postgres Setup](#postgres-setup)
-4. [ZSH + OMZ + P10K](#zsh-omz-p10k)
+1. 🔧 [Git and SSH](#git-and-ssh)
+2. 🚀 [EC2 Deployment](#ec2-deployment)
+3. 🐘 [Postgres Setup](#postgres-setup)
+4. 🎨 [ZSH + OMZ + P10K](#zsh-setup)
 
 ---
 
-## GIT AND SSH
+## 🔧 GIT AND SSH
 
 ### Git Config
 
@@ -79,7 +79,7 @@ pbcopy < ~/.ssh/id_ed25519.pub
 
 ---
 
-## EC2 Deployment
+## 🚀 EC2 Deployment
 
 ### Required packages
 
@@ -200,7 +200,7 @@ sudo certbot --nginx
 
 ---
 
-## Postgres Setup
+## 🐘 Postgres Setup
 
 ### ArchLinux
 
@@ -237,7 +237,7 @@ GRANT ALL PRIVILEGES ON DATABASE sampledb TO sampleuser;
 
 ---
 
-## ZSH + OMZ + P10K
+## 🎨 ZSH Setup
 
 ### install zsh
 
